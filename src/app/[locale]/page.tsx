@@ -58,7 +58,7 @@ export default function HomePage() {
           </Balancer>
 
           <div className="mt-3 flex flex-wrap items-center justify-center gap-4">
-            {env.DEV_DEMO_NOTES === "true" ? (
+            {env.DEV_DEMO_NOTES === "true" ?
               <Link
                 href={REPOSITORY_URL}
                 size="lg"
@@ -68,12 +68,11 @@ export default function HomePage() {
                 <Download className="mr-2 h-4 w-4" />
                 {t("landing.main-cta")}
               </Link>
-            ) : (
-              <Link href="/products" size="lg" variant="secondary">
+            : <Link href="/products" size="lg" variant="secondary">
                 <ShoppingCart className="mr-2 h-4 w-4" />
                 {t("landing.buy-now")}
               </Link>
-            )}
+            }
 
             <Link
               className="border-2 border-zinc-900 dark:border-zinc-800"
@@ -82,9 +81,9 @@ export default function HomePage() {
               variant="outline"
             >
               <Store className="mr-2 h-4 w-4" />
-              {env.DEV_DEMO_NOTES === "true"
-                ? `${t("demo.launch")}`
-                : `${t("landing.sell-now")}`}
+              {env.DEV_DEMO_NOTES === "true" ?
+                `${t("demo.launch")}`
+              : `${t("landing.sell-now")}`}
             </Link>
           </div>
         </section>
